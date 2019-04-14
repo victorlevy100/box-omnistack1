@@ -27,8 +27,9 @@ const File = new mongoose.Schema({
 );
 //Um campo virtual no mongoDB, é um campo que não existe dentro da tabela, porem existe no lado do back-end
 File.virtual('url').get(function(){
+    const url = process.env.URL || 'http://localhost:3333'
     //encodeURIComponent() é para o texto que estará dentro passar para formato url ser lido em encode
-    return `http://localhost:3333/files/${encodeURIComponent(this.path)}`;
+    return `${url}/files/${encodeURIComponent(this.path)}`;
 });
 
 
