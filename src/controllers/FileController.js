@@ -1,5 +1,5 @@
-const Box = require('../model/Box');
-const File = require('../model/File');
+const Box = require("../model/Box");
+const File = require("../model/File");
 
 class FileController{
     //permitir que o usuario crie novos box

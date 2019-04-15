@@ -1,5 +1,5 @@
 // model box que representa uma pasta dentro da aplicação
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 //schema é como uma tabela dos bancos relacionais
 //banco de dados não relacionais não tem conceitos de tabelas por isso se chamam de Schema

@@ -1,11 +1,11 @@
-const express = require ('express');
-const multer = require ('multer');
-const multerConfig = require ('./config/multer');
+const express = require ("express");
+const multer = require ("multer");
+const multerConfig = require ("./config/multer");
 
 const routes = express.Router();
 
-const BoxController = require ('./controllers/BoxControllers');
-const FileController = require ('./controllers/FileController');
+const BoxController = require ("./controllers/BoxControllers");
+const FileController = require ("./controllers/FileController");
 /*//req(requisicao) representa a requisição feita ao nosso servidor, dentro dele à informações relacionadas a requisição
 //ex: se o nosso front-end está enviando um form, dentro da requisição vai está os campos do form, se o user está enviando um parametro pela url ou qualquer tipo de info. que o cliente  está enviando para o servidor vai está dentro da requisição.
 // tudo for acessar de informação, variavel, upload de arquivos vai está dentro do req.
@@ -20,10 +20,10 @@ POST quando for criar algo
 PUT quando for editar
 DELETE quando for deletar
 */ 
-routes.post('/boxes', BoxController.store);
-routes.get('/boxes/:id', BoxController.show);
+routes.post("/boxes", BoxController.store);
+routes.get("/boxes/:id", BoxController.show);
 
-routes.post('/boxes/:id/files', multer(multerConfig).single('file'),FileController.store);
+routes.post("/boxes/:id/files", multer(multerConfig).single("file"),FileController.store);
 
 // module.exports  exporta alguma informação do meu arquivos, normalmente só se utiliza um module.exports por aquivo, ou seja exportando de arquivo e importando em outro arquivo
 module.exports = routes;

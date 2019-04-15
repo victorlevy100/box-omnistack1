@@ -1,18 +1,18 @@
-const multer = require('multer');
-const path = require('path');
+const multer = require("multer");
+const path = require("path");
 //serve para gerar rest, ou conjuntos de caracteres unicos
-const crypto = require('crypto');
+const crypto = require("crypto");
 module.exports = {
     //é o destino para onde os meus arquivos vão
     //path.resolve serve para não se ter problema na hora de escolher o caminho
     //__dirname = essa variavel retorna o diretorio onde o arq. multer está
-    dest: path.resolve(__dirname, '..', '..', 'tmp'), 
+    dest: path.resolve(__dirname, "..", "..", "tmp"), 
     //é um tipo de armazenamento q o multer oferece 
     storage: multer.diskStorage ({
         //obrigatorio configurar essas duas propriedades
         //cb (callback) = chama no momento que já foi determinado a localização
         destination: (req, file, cb) => {
-            cb (null,path.resolve(__dirname, '..', '..', 'tmp'));
+            cb (null,path.resolve(__dirname, "..", "..", "tmp"));
         },
         //determina qual o nome do arquivo dentro desse projeto
         filename: (req, file, cb) => {  

@@ -1,4 +1,4 @@
-const Box = require('../model/Box');
+const Box = require("../model/Box");
 
 class BoxController{
     //permitir que o usuario crie novos box

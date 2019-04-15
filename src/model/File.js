@@ -1,5 +1,5 @@
 // model box que representa uma pasta dentro da aplicação
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 //schema é como uma tabela dos bancos relacionais
 //banco de dados não relacionais não tem conceitos de tabelas por isso se chamam de Schema
@@ -13,7 +13,7 @@ const File = new mongoose.Schema({
         //nome do arquivo fisico armazenado na minha aplicação
         type: String,
         required: true
-    },
+    }
 },
 {
     //timestamp: true = cria um campo chamado create apt e update apt, em cada registro do minha tabela (create apt armazena a data de criação de serviço e o update apt a data de modificação do registro)
@@ -26,8 +26,8 @@ const File = new mongoose.Schema({
 }
 );
 //Um campo virtual no mongoDB, é um campo que não existe dentro da tabela, porem existe no lado do back-end
-File.virtual('url').get(function(){
-    const url = process.env.URL || 'http://localhost:3333'
+File.virtual("url").get(function(){
+    const url = process.env.URL || 'http://localhost:3333';
     //encodeURIComponent() é para o texto que estará dentro passar para formato url ser lido em encode
     return `${url}/files/${encodeURIComponent(this.path)}`;
 });
